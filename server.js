@@ -8,11 +8,7 @@ app.set("port", process.env.PORT || 3000);
 //para aceptar formatos json (midleware)
 app.use(express.json());
 
-app.use("/", (req, res)=>{
-	res.json(
-		{message: "Hola"}
-	);
-});
+app.use("/api/user", require("../node_apirestfull/routes/user.route"));
 
 //para configurar por donde escucha el servidor
 app.listen(app.get("port"), ()=>{
